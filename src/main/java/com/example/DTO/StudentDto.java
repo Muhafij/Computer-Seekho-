@@ -1,17 +1,22 @@
 package com.example.DTO;
-
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class StudentDto {
-    private int id;
+    public StudentDto(int studentId, String photoUrl2, String studentName, String studentMobile, String courseName,
+			String batchName, int paymentDue) {
+		// TODO Auto-generated constructor stub
+	}
+	private int id;
     private String photoUrl;
     private String name; 
     private String mobile;
     private String course;
-    private String batch;
-    private int pendingFees;
-	public int getId() {
+    public int getId() {
 		return id;
 	}
 	public void setId(int id) {
@@ -53,16 +58,6 @@ public class StudentDto {
 	public void setPendingFees(int pendingFees) {
 		this.pendingFees = pendingFees;
 	}
-	public StudentDto(int id, String photoUrl, String name, String mobile, String course, String batch,
-			int pendingFees) {
-		super();
-		this.id = id;
-		this.photoUrl = photoUrl;
-		this.name = name;
-		this.mobile = mobile;
-		this.course = course;
-		this.batch = batch;
-		this.pendingFees = pendingFees;
-	}
-	public StudentDto() {}
+	private String batch;
+    private int pendingFees;
 }
